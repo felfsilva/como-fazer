@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const categorias = require('./routes/categorias')
 const publicacoes = require('./routes/publicacoes')
 
+const auth = 'PLSgf3yOpjDP8Ap5ysxeEULj4mrT7QbNRQk6zuJ7'
+
 
 app.set('view engine', 'ejs')
 
@@ -15,8 +17,8 @@ app.use('/publicacoes', publicacoes)
 const port = process.env.PORT || 3000
 
 // Obter valores do index.ejs
- app.get('', async(req, res)=> {
-     const content = await axios.get('https://como-fazer-63105.firebaseio.com')
+ app.get('/', async(req, res)=> {
+     const content = await axios.get('https://como-fazer-63105.firebaseio.com/categorias.json?auth=' + auth)
      res.render('index')
 
  })
