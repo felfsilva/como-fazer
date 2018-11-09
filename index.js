@@ -18,7 +18,7 @@ const port = process.env.PORT || 3000
 
 // Obter valores do index.ejs
  app.get('/', async(req, res)=> {
-     await axios.get('https://como-fazer-63105.firebaseio.com/categorias.json?auth=' + auth)
+    // await axios.get('https://como-fazer-63105.firebaseio.com/categorias.json?auth=' + auth)
      res.send('funcionando')
 
  })
