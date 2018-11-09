@@ -15,7 +15,7 @@ app.use('/publicacoes', publicacoes)
 const port = process.env.PORT || 3000
 
 // Obter valores do index.ejs
- app.get('/', async(req, res)=> {
+ app.get('', async(req, res)=> {
      const content = await axios.get('https://como-fazer-63105.firebaseio.com')
      res.render('index')
 
